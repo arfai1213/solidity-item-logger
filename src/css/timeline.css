@@ -1,0 +1,65 @@
+/* modified from w3school */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  background-color: #474e5d;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  margin-left: -3px;
+}
+
+/* tl-item around content */
+.tl-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+}
+
+/* The circles on the timeline */
+.tl-item::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 7px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Add arrows to the right tl-item (pointing left) */
+.tl-item::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* The actual content */
+.tl-item .content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}

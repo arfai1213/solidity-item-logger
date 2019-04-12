@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Admin</title>
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/css/timeline.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Admin</a>
+    </nav>
+
+    <main role="main" class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 fixed-col pb-4">
+          <ul id="item-list" class="list-group px-2"></ul>
+        </div>
+
+        <div class="col-md-8">
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#createItemModal"
+            >
+              Create Item
+            </button>
+          </div>
+
+          <hr />
+
+          <div>
+            <!-- for showing item details -->
+            <div id="item-name" class="mb-4"></div>
+
+            <div class="input-group mb-3">
+              <input
+                id="txt-input-log"
+                type="text"
+                class="form-control"
+                placeholder="What 's happened?"
+              />
+              <div class="input-group-append">
+                <button
+                  id="btn-add-log"
+                  class="btn btn-outline-secondary"
+                  type="button"
+                >
+                  Log
+                </button>
+              </div>
+            </div>
+            <div class="timeline" id="item-timeline"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="createItemModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create Item</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="input-item-id">ID</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input-item-id"
+                placeholder="Enter ID"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="input-item-name">Item Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input-item-name"
+                placeholder="Enter name"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btn-create-item">
+              Create
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+main {
+  margin-top: 4rem;
+}
+
+.fixed-col {
+  height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.fixed-col > #item-list {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.fixed-col > #item-list > .list-group-item {
+  cursor: pointer;
+}
